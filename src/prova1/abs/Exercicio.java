@@ -9,9 +9,9 @@ public class Exercicio {
     private List<String> gruposMusculares;
     private List<Equipamento> equipamentos;
     
-    public Exercicio(String nome, TipoExercicio categoria, List<String> gruposMusculares, List<Equipamento> equipamentos){
+    public Exercicio(String nome, TipoExercicio categoria, String gruposMusculares, List<Equipamento> equipamentos){
         this.categoria = categoria;
-        this.gruposMusculares = gruposMusculares;
+        this.gruposMusculares.add(gruposMusculares);
         this.equipamentos = equipamentos;
         this.nome = nome;
     }
@@ -24,8 +24,8 @@ public class Exercicio {
         this.categoria = categoria;
     }
 
-    public void setGruposMusculares(List<String> gruposMusculares) {
-    	this.gruposMusculares = gruposMusculares;
+    public void addGruposMusculares(String gruposMusculares) {
+    	this.gruposMusculares.add(gruposMusculares);
     }
 
     public void setEquipamentos(List<Equipamento> equipamentos) {

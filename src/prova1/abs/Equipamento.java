@@ -15,8 +15,8 @@ public abstract class Equipamento {
 	
 	//protected abstract void criarEquipamento();
 	
-	public void adicionaEquipamento() {
-		this.quantidade =+ 1;
+	public void addQuantidade() {
+		this.quantidade += 1;
 	}
 	
 	public String getIdentificador() {

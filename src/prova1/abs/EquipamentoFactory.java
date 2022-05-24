@@ -23,8 +23,11 @@ public class EquipamentoFactory {
 		
 		if (equipamento != null) {
 			return equipamento;
+			
 		} else {
+			
 			switch (tipo) {
+			
 			case HALTERE:
 				equipamento = new Haltere(identificador, quantidade, 0);
 				listaEquipamentos.add(equipamento);
@@ -49,7 +52,7 @@ public class EquipamentoFactory {
 		for (Equipamento equipamento : listaEquipamentos) {
 			if (equipamento.getIdentificador().equals(identificador) && equipamento.getTipo().equals(tipo)) {
 				//System.out.println("Equipamento exisitente");
-				equipamento.adicionaEquipamento();
+				equipamento.addQuantidade();
 				return equipamento;
 			}
 		}
