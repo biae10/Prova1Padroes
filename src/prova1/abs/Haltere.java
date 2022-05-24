@@ -7,12 +7,6 @@ public class Haltere extends Equipamento {
 	public Haltere(String identificador, Integer quantidade, double peso) {
 		super(identificador, quantidade, TipoEquipamento.HALTERE);
 		this.peso = peso;
-		criarEquipamento();
-	}
-
-	@Override
-	protected void criarEquipamento() {
-		System.out.println("Criando um halter...");
 	}
 
 }

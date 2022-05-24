@@ -10,13 +10,6 @@ public class Maquina extends Equipamento {
 		this.descricao = descricao;
 		this.marca = marca;
 	}
-
-	@Override
-	protected void criarEquipamento() {
-		System.out.println("Criando uma maquina...");
-		
-		
-	}
 	
 	
 

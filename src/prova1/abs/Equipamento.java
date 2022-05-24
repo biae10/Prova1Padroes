@@ -13,7 +13,11 @@ public abstract class Equipamento {
 		this.tipo = tipo;
 	}
 	
-	protected abstract void criarEquipamento();
+	//protected abstract void criarEquipamento();
+	
+	public void adicionaEquipamento() {
+		this.quantidade =+ 1;
+	}
 	
 	public String getIdentificador() {
 		return identificador;

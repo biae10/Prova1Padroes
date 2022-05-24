@@ -4,33 +4,58 @@ import java.util.ArrayList;
 
 public class EquipamentoFactory {
 	
-	static ArrayList<Equipamento> listaEquipamentos = new ArrayList<Equipamento>();
+	ArrayList<Equipamento> listaEquipamentos = new ArrayList<Equipamento>();
+	private static EquipamentoFactory instancia;
 	
-	//private Equipamento verificaSeExisteAntesDeCriar() {
-	//	
-	//}
+	private EquipamentoFactory() {};
 	
-	public static Equipamento criaEquipamento(TipoEquipamento tipo) {
-		
-		Equipamento equipamento = null;
-	
-		switch (tipo) {
-		case HALTERE:
-			equipamento = new Haltere("Haltere01", 1, 0);
-			break;
-		case MAQUINA:
-			equipamento = new Maquina("Maquina01", 2, null, null);
-			break;
-		case ACESSORIO:
-			equipamento = new Acessorio("Acessorio01", 3, null);
-			break;
-		default:
-			break;
+	public static EquipamentoFactory getInstance() {
+		if (instancia == null) {
+			instancia = new EquipamentoFactory();
 		}
 		
-		return equipamento;
-		
+		return instancia;
 	}
+	
+	public Equipamento criaEquipamento(TipoEquipamento tipo, String identificador, int quantidade) {
+		
+		Equipamento equipamento = verificaSeExiste(identificador, tipo);
+		
+		if (equipamento != null) {
+			return equipamento;
+		} else {
+			switch (tipo) {
+			case HALTERE:
+				equipamento = new Haltere(identificador, quantidade, 0);
+				listaEquipamentos.add(equipamento);
+				return equipamento;
+			case MAQUINA:
+				equipamento =  new Maquina(identificador, quantidade, null, null);
+				listaEquipamentos.add(equipamento);
+				return equipamento;
+			case ACESSORIO:
+				equipamento =  new Acessorio(identificador, quantidade, null);
+				listaEquipamentos.add(equipamento);
+				return equipamento;
+			default:
+				throw new IllegalArgumentException("Unknown");
+			}
+		}
 
+	}
+	
+	private Equipamento verificaSeExiste(String identificador, TipoEquipamento tipo) {
+		
+		for (Equipamento equipamento : listaEquipamentos) {
+			if (equipamento.getIdentificador().equals(identificador) && equipamento.getTipo().equals(tipo)) {
+				//System.out.println("Equipamento exisitente");
+				equipamento.adicionaEquipamento();
+				return equipamento;
+			}
+		}
+		
+		return null;
+		
+		}
 
 }
