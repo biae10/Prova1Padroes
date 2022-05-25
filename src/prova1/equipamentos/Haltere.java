@@ -23,15 +23,18 @@ public class Haltere extends Equipamento{
     
     public static Equipamento novoHaltere(String identificador, int quantidade, double peso, List<Equipamento> equipamentos){
        
-        boolean EquipamentoRetornadoExiste = EquipamentoFactory.verificarExistenciaEquipamento(identificador, equipamentos);
+    	Equipamento equipamento = EquipamentoFactory.verificarExistenciaEquipamento(identificador, equipamentos);
         
-        if(EquipamentoRetornadoExiste){
-            Equipamento halter = EquipamentoFactory.pegarEquipamentoPorIdentificador(identificador, equipamentos);
-            int novaQtd = halter.getQuantidade() + quantidade;
-            halter.setQuantidade(novaQtd);
-            return halter;
-        }else{
-            return new Haltere(identificador,quantidade, peso);  
+        if (equipamento != null) {
+        	
+        	equipamento.addQuantidade();
+            return equipamento;
+            
+        } else {
+        	
+        	equipamento = new Haltere(identificador, quantidade, peso); 
+            equipamentos.add(equipamento);
+            return equipamento;
         } 
     }
     

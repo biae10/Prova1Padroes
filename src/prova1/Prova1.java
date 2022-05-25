@@ -27,17 +27,25 @@ public class Prova1 {
                                                   IllegalArgumentException, InvocationTargetException {
       
       System.out.println("*** Testes dos tipos de equipamentos gerados ***");  
-      EquipamentoFactory factoryHalter = EquipamentoFactory.pegarFactory(TipoEquipamento.HALTERE, "Bianca", 10,5, "Supino", "Galvin Klei");
+      
+      EquipamentoFactory factoryHalter = EquipamentoFactory.pegarFactory(TipoEquipamento.HALTERE, "Bianca", 10, 5, "Supino", "Galvin Klei");
       Equipamento haltere = factoryHalter.gerarEquipamento();
-      System.out.println(haltere.getQuantidade());
+      
+      System.out.println(haltere);
+      //System.out.println(haltere.getIdentificador());
+      //System.out.println(haltere.getQuantidade());
+      //haltere.setQuantidade(40);
+      //System.out.println(haltere.getQuantidade());
+      
        //factoryHalter.setIdentificador("Katia");
-      factoryHalter.setQuantidade(40);
+      
       Equipamento haltere2 = factoryHalter.gerarEquipamento();
+      System.out.println(haltere2);
       System.out.println(haltere2.getQuantidade());
       //Equipamento haltere3 = factoryHalter.gerarEquipamento();
       //System.out.println(haltere.getQuantidade());
       
-      EquipamentoFactory factoryMaquina = EquipamentoFactory.pegarFactory(TipoEquipamento.MAQUINA, "Bianca", 10,5, "Supino", "Galvin Klei");
+      EquipamentoFactory factoryMaquina = EquipamentoFactory.pegarFactory(TipoEquipamento.MAQUINA, "Bianca", 10, 5, "Supino", "Galvin Klei");
       Equipamento maquina1 = factoryMaquina.gerarEquipamento();
       factoryMaquina.setIdentificador("Katia");
       Equipamento maquina2 = factoryMaquina.gerarEquipamento();

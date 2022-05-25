@@ -18,10 +18,7 @@ public class HaltereFactory extends EquipamentoFactory{
     public Equipamento gerarEquipamento() {
         
         Equipamento haltere = Haltere.novoHaltere(identificador, quantidade, peso, equipamentos);  
-        boolean EquipamentoRetornadoExiste = EquipamentoFactory.verificarExistenciaEquipamento(identificador, equipamentos);
-        if(EquipamentoRetornadoExiste == false){
-            this.equipamentos.add(haltere);
-        }
+        
         return haltere;
     }
     
