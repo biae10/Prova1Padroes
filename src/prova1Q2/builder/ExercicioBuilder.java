@@ -18,15 +18,15 @@ import prova1Q2.treino.TipoExercicio;
 public class ExercicioBuilder implements Builder{
     
     private String nome;
-    private TipoExercicio categoria;
-    private String gruposMusculares;
+    private List<TipoExercicio> categoria;
+    private List<String> gruposMusculares;
     private List<Equipamento> equipamentos;
     
     @Override
     public void reset() {
         this.nome = null;
-        this.categoria = null;
-        this.gruposMusculares = null;
+        this.categoria = new ArrayList<TipoExercicio>();
+        this.gruposMusculares = new ArrayList<String>();
         this.equipamentos = new ArrayList<Equipamento>();
     }
 
@@ -36,13 +36,13 @@ public class ExercicioBuilder implements Builder{
     }
 
     @Override
-    public void setTipoExercicio(TipoExercicio tipo) {
-        this.categoria = tipo;
+    public void addTipoExercicio(TipoExercicio tipo) {
+        this.categoria.add(tipo);
     }
 
     @Override
-    public void setGrupoMuscular(String grupo) {
-        this.gruposMusculares = grupo;
+    public void addGrupoMuscular(String grupo) {
+        this.gruposMusculares.add(grupo);
     }
 
     @Override
@@ -52,7 +52,7 @@ public class ExercicioBuilder implements Builder{
     
     public Exercicio build(){
         if(this.nome == null || this.nome == ""){
-            throw new IllegalArgumentException("O nome n√£o pode ser vazio");
+            throw new IllegalArgumentException("O nome n„o pode ser vazio");
         } else {
         }
         return new Exercicio(this.nome,this.categoria, this.gruposMusculares, this.equipamentos);

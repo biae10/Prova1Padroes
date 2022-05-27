@@ -22,7 +22,7 @@ public abstract class EquipamentoFactory {
     protected double peso;
     protected String descricao;
     protected String marca;
-    protected List<Equipamento> equipamentos = new ArrayList<Equipamento>();
+    protected List<Equipamento> equipamentos = ListSingleton.getInstance().getArrayList();
     
     public static EquipamentoFactory pegarFactory(TipoEquipamento tipo, String identificador, int quantidade
                                     , double peso, String descricao, String marca) throws ClassNotFoundException, 

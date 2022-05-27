@@ -13,7 +13,7 @@ import prova1.factory.EquipamentoFactory;
  * @author user
  */
 public class Haltere extends Equipamento{
-    
+   
     private double peso;
 
     private Haltere(String identificador, int quantidade, double peso){
