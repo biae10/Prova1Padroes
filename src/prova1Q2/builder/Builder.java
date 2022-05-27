@@ -16,8 +16,8 @@ public interface Builder {
     
     public void reset();
     public void setNome(String nome);
-    public void setTipoExercicio(TipoExercicio tipo); 
-    public void setGrupoMuscular(String grupo);
+    public void addTipoExercicio(TipoExercicio tipo); 
+    public void addGrupoMuscular(String grupo);
     public void addEquipamento(Equipamento equipamento);
     
 }
