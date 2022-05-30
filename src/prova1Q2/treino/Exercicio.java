@@ -59,8 +59,7 @@ public class Exercicio {
         return gruposMusculares;
     }
 
-    public List<String> getEquipamentos() {
-        return equipamentos.stream().map(e -> e.getIdentificador())
-        		.toList();
+    public List<Equipamento> getEquipamentos() {
+        return equipamentos;
     }
 }
