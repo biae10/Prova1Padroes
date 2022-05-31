@@ -17,11 +17,9 @@ public class MaquinaFactory extends EquipamentoFactory{
 
     @Override
     public Equipamento gerarEquipamento() {
+    	
         Equipamento maquina = Maquina.novaMaquina(identificador, quantidade, descricao, marca, equipamentos);
-        boolean EquipamentoRetornadoExiste = EquipamentoFactory.verificarExistenciaEquipamento(identificador, equipamentos);
-         if(EquipamentoRetornadoExiste == false){
-            this.equipamentos.add(maquina);
-        }
+        
         return maquina;
     }
     

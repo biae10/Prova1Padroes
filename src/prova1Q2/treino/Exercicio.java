@@ -6,6 +6,7 @@
 package prova1Q2.treino;
 
 import java.util.List;
+
 import prova1.equipamentos.Equipamento;
 
 /**
@@ -15,13 +16,13 @@ import prova1.equipamentos.Equipamento;
 public class Exercicio {
     
     private String nome;
-    private TipoExercicio categoria;
-    private String gruposMusculares;
+    private List<TipoExercicio> categoria;
+    private List<String> gruposMusculares;
     private List<Equipamento> equipamentos;
     
-    public Exercicio(String nome, TipoExercicio categoria, String gruposMusculares, List<Equipamento> equipamentos){
+    public Exercicio(String nome, List<TipoExercicio> categoria, List<String> gruposMusculares2, List<Equipamento> equipamentos){
         this.categoria = categoria;
-        this.gruposMusculares = gruposMusculares;
+        this.gruposMusculares = gruposMusculares2;
         this.equipamentos = equipamentos;
         this.nome = nome;
     }
@@ -30,11 +31,11 @@ public class Exercicio {
         this.nome = nome;
     }
 
-    public void setCategoria(TipoExercicio categoria) {
+    public void setCategoria(List<TipoExercicio> categoria) {
         this.categoria = categoria;
     }
 
-    public void setGruposMusculares(String gruposMusculares) {
+    public void setGruposMusculares(List<String> gruposMusculares) {
         this.gruposMusculares = gruposMusculares;
     }
 
@@ -50,16 +51,15 @@ public class Exercicio {
         return nome;
     }
 
-    public TipoExercicio getCategoria() {
+    public List<TipoExercicio> getCategoria() {
         return categoria;
     }
 
-    public String getGruposMusculares() {
+    public List<String> getGruposMusculares() {
         return gruposMusculares;
     }
 
     public List<Equipamento> getEquipamentos() {
         return equipamentos;
     }
-    
 }

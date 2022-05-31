@@ -22,14 +22,15 @@ public abstract class EquipamentoFactory {
     protected double peso;
     protected String descricao;
     protected String marca;
-    protected List<Equipamento> equipamentos = new ArrayList();
+    protected List<Equipamento> equipamentos = ListSingleton.getInstance().getArrayList();
     
-    public static EquipamentoFactory pegarFactory(TipoEquipamento tipo,String identificador, int quantidade
+    public static EquipamentoFactory pegarFactory(TipoEquipamento tipo, String identificador, int quantidade
                                     , double peso, String descricao, String marca) throws ClassNotFoundException, 
                                 NoSuchMethodException, InstantiationException, IllegalAccessException, 
-                                IllegalArgumentException, InvocationTargetException{
+                                IllegalArgumentException, InvocationTargetException {
         
         EquipamentoFactory factory = (EquipamentoFactory)Class.forName(tipo.getClassName()).getConstructor().newInstance();
+        
         factory.setIdentificador(identificador);
         factory.setQuantidade(quantidade);
         factory.setDescricao(descricao);
@@ -85,24 +86,16 @@ public abstract class EquipamentoFactory {
         return equipamentos;
     }
         
-    public static boolean verificarExistenciaEquipamento(String identificador, List<Equipamento> equipamentos){
-       
-        for(int i = 0; i < equipamentos.size(); i++){
-                if(identificador.equals(equipamentos.get(i).getIdentificador())){
-                    return true;
-                }
-            }
-        return false;
+    public static Equipamento verificarExistenciaEquipamento(String identificador, List<Equipamento> equipamentos) {
+    	
+    	for (Equipamento equipamento : equipamentos) {
+    		if (equipamento.getIdentificador().equals(identificador)) {
+    			return equipamento;
+    		}
+    	}
+    	
+    	return null;
     }
     
-    public static Equipamento pegarEquipamentoPorIdentificador(String identificador,List<Equipamento> equipamentos ){
-        
-        for(int i = 0; i < equipamentos.size(); i++){
-                if(identificador.equals(equipamentos.get(i).getIdentificador())){
-                    return equipamentos.get(i);
-                }
-            }
-        return null;
-    }
     
 }
