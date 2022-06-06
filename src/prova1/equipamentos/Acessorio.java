@@ -23,16 +23,20 @@ public class Acessorio extends Equipamento{
     
     public static Equipamento novoAcessorio(String identificador, int quantidade, String descricao, List<Equipamento> equipamentos){
        
-        boolean EquipamentoRetornadoExiste = EquipamentoFactory.verificarExistenciaEquipamento(identificador, equipamentos);
+    	Equipamento equipamento = EquipamentoFactory.verificarExistenciaEquipamento(identificador, equipamentos);
         
-        if(EquipamentoRetornadoExiste){
-            Equipamento halter = EquipamentoFactory.pegarEquipamentoPorIdentificador(identificador, equipamentos);
-            int novaQtd = halter.getQuantidade() + quantidade;
-            halter.setQuantidade(novaQtd);
-            return halter;
-        }else{
-            return new Acessorio(identificador,quantidade, descricao);  
-        }                    
+        if (equipamento != null) {
+        	
+        	equipamento.addQuantidade();
+            return equipamento;
+            
+        } else {
+        	
+        	equipamento = new Acessorio(identificador,quantidade, descricao); 
+            equipamentos.add(equipamento);
+            return equipamento;
+        } 
+    	                  
     }
     
     @Override

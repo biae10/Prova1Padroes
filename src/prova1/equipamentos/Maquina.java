@@ -26,16 +26,20 @@ public class Maquina extends Equipamento{
     
     public static Equipamento novaMaquina(String identificador, int quantidade, String descricao, String marca, List<Equipamento> equipamentos){
  
-        boolean EquipamentoRetornadoExiste = EquipamentoFactory.verificarExistenciaEquipamento(identificador, equipamentos);
+    	Equipamento equipamento = EquipamentoFactory.verificarExistenciaEquipamento(identificador, equipamentos);
         
-        if(EquipamentoRetornadoExiste){
-            Equipamento halter = EquipamentoFactory.pegarEquipamentoPorIdentificador(identificador, equipamentos);
-            int novaQtd = halter.getQuantidade() + quantidade;
-            halter.setQuantidade(novaQtd);
-            return halter;
-        }else{
-            return new Maquina(identificador,quantidade, descricao,marca);  
-        }        
+        if (equipamento != null) {
+        	
+        	equipamento.addQuantidade();
+            return equipamento;
+            
+        } else {
+        	
+        	equipamento = new Maquina(identificador,quantidade, descricao,marca); 
+            equipamentos.add(equipamento);
+            return equipamento;
+        } 
+          
     }
       
     @Override

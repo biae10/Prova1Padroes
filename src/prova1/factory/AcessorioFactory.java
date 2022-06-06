@@ -18,11 +18,9 @@ public class AcessorioFactory extends EquipamentoFactory{
     public Equipamento gerarEquipamento() {
         
        Equipamento acessorio = Acessorio.novoAcessorio(identificador, quantidade, descricao, equipamentos);
-       boolean EquipamentoRetornadoExiste = EquipamentoFactory.verificarExistenciaEquipamento(identificador, equipamentos);
-       if(EquipamentoRetornadoExiste == false){
-            this.equipamentos.add(acessorio);
-        }
+       
        return acessorio;
+       
     }
     
 }
