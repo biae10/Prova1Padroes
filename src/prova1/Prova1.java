@@ -92,8 +92,7 @@ public class Prova1 {
       
       System.out.println("\n*** Exercicios Construidos ***");
       System.out.println("Nome: " + exercicioBianca.getNome());
-      System.out.println("Lista de equipamentos usados: " + exercicioBianca.getEquipamentos().stream().map(e -> e.getIdentificador())
-      		.toList());
+      System.out.println("Lista de equipamentos usados: " + exercicioBianca.getEquipamentos().stream().map(e -> e.getIdentificador()));
       System.out.println("Categoria: " + exercicioBianca.getCategoria());
       System.out.println("Grupos Musculares: " + exercicioBianca.getGruposMusculares());
       
@@ -106,8 +105,7 @@ public class Prova1 {
       Exercicio exercicioDaniel = builder.build();
       
       System.out.println("\nNome: " + exercicioDaniel.getNome());
-      System.out.println("Lista de equipamentos usados: " + exercicioDaniel.getEquipamentos().stream().map(e -> e.getIdentificador())
-      		.toList());
+      System.out.println("Lista de equipamentos usados: " + exercicioDaniel.getEquipamentos().stream().map(e -> e.getIdentificador()));
       System.out.println("Categoria: " + exercicioDaniel.getCategoria());
       System.out.println("Grupos Musculares: " + exercicioDaniel.getGruposMusculares());
       

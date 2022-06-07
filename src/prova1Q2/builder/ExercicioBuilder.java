@@ -52,7 +52,7 @@ public class ExercicioBuilder implements Builder{
     
     public Exercicio build(){
         if(this.nome == null || this.nome == ""){
-            throw new IllegalArgumentException("O nome não pode ser vazio");
+            throw new IllegalArgumentException("O nome nao pode ser vazio");
         } else {
         }
         return new Exercicio(this.nome,this.categoria, this.gruposMusculares, this.equipamentos);
