@@ -27,7 +27,7 @@ public class Acessorio extends Equipamento{
         
         if (equipamento != null) {
         	
-        	equipamento.addQuantidade();
+        	equipamento.addQuantidade(quantidade);
             return equipamento;
             
         } else {
