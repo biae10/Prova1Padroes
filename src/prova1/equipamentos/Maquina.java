@@ -30,7 +30,7 @@ public class Maquina extends Equipamento{
         
         if (equipamento != null) {
         	
-        	equipamento.addQuantidade();
+        	equipamento.addQuantidade(quantidade);
             return equipamento;
             
         } else {
