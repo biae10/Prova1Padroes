@@ -39,8 +39,8 @@ public abstract class Equipamento {
         this.quantidade = quantidade;
     }
     
-    public void addQuantidade() {
-    	this.quantidade += 1;
+    public void addQuantidade(int quantidadeNova) {
+    	this.quantidade = this.quantidade + quantidadeNova ;
     }
     
     
